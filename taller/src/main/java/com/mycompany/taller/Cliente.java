@@ -1,31 +1,51 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * @cliente.java         
+ *
+ * @author             Kattya Desiderio 
+ * Fecha Creación      04/05/2017
+ * Fecha Modificación  01/01/18
+ * @version            1.2
  */
 package com.mycompany.taller;
 
 /**
  *
- * @author Kattya
+ * @author kattya
  */
 public class Cliente {
 
-    public String Name;
+    /**
+     *
+     */
+    public String nombres;
     public int sector;
-    Pago pago;
+    public Pago pago;
 
-    public Cliente(String Name, int sector, Pago pago) {
-        this.Name = Name;
+    /**
+     *
+     * @param nombres
+     * @param sector
+     * @param pago
+     */
+    public Cliente(String nombres, int sector, Pago pago) {
+        this.nombres = nombres;
         this.sector = sector;
         this.pago = pago;
     }
 
-    public String getName() {
-        return Name;
+    /**
+     *
+     * @return
+     */
+    public String getNombres() {
+        return nombres;
     }
 
-    public String GetSector() {
+    /**
+     *
+     * @return
+     */
+    public String getSector() {
         switch (this.sector) {
             case 1:
                 return "Norte";
@@ -39,13 +59,17 @@ public class Cliente {
         return null;
     }
 
-    public String InfoPer() {
-        return "Usted ingreso la siguiente informaci�n" + "\nNombre:" + Name + "\nSector=" + sector;
+    /**
+     *
+     * @return
+     */
+    public String getInformacionCliente() {
+        return "Usted ingreso la siguiente informacion" + "\nNombre:" + nombres + "\nSector=" + sector;
     }
 
     @Override
     public String toString() {
-        return "Informaci�n correcta";
+        return "Informacion correcta";
     }
 
 }
