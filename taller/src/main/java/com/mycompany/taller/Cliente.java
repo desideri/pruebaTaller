@@ -14,58 +14,27 @@ package com.mycompany.taller;
  */
 public class Cliente {
 
-    /**
-     *
-     */
-    public String nombres;
-    public int sector;
-    public Pago pago;
+    String names;
+    int cliente_sector;
+    Pago Pago;
 
-    /**
-     *
-     * @param nombres
-     * @param sector
-     * @param pago
-     */
-    public Cliente(String nombres, int sector, Pago pago) {
-        this.nombres = nombres;
-        this.sector = sector;
-        this.pago = pago;
+    public Cliente(String names, int sector, Pago pago) {
+        this.names = names;
+        this.cliente_sector = sector;
+        this.Pago = pago;
     }
 
-    /**
-     *
-     * @return
-     */
     public String getNombres() {
-        return nombres;
+        return names;
     }
 
-    /**
-     *
-     * @return
-     */
-    public String getSector() {
-        switch (this.sector) {
-            case 1:
-                return "Norte";
-            case 2:
-                return "Centro";
-            case 3:
-                return "Sur";
-            default:
-                break;
-        }
-        return null;
+    public String getinfo_cliente() {
+        return "Usted ingreso la siguiente informacion" + "\nNombre:" + names + "\nSector=" + cliente_sector;
     }
-
-    /**
-     *
-     * @return
-     */
-    public String getInformacionCliente() {
-        return "Usted ingreso la siguiente informacion" + "\nNombre:" + nombres + "\nSector=" + sector;
-    }
+    
+//     public String getclientesector() {
+//        return "Usted ingreso la siguiente informacion" + "\nNombre:" + names + "\nSector=" + cliente_sector;
+//    }
 
     @Override
     public String toString() {
