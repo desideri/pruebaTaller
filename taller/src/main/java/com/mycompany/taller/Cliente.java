@@ -35,7 +35,7 @@ public class Cliente {
 
     /**
      *
-     * @return
+     * @return nombres
      */
     public String getNombres() {
         return nombres;
