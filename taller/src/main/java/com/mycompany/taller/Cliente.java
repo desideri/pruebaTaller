@@ -3,48 +3,47 @@
  *
  * @author             Kattya Desiderio 
  * Fecha Creación      04/05/2017
- * Fecha Modificación  01/01/18
+ * Fecha Modificación  26/01/18
  * @version            1.2
  */
 package com.mycompany.taller;
 
 /**
  *
- * @author kattya
+ * @author Kattya
  */
 public class Cliente {
+    
+    String names;
+    int sector;
+    //Pago pago;
 
     /**
      *
-     */
-    public String nombres;
-    public int sector;
-    public Pago pago;
-
-    /**
-     *
-     * @param nombres
+     * @param names
      * @param sector
      * @param pago
      */
-    public Cliente(String nombres, int sector, Pago pago) {
-        this.nombres = nombres;
-        this.sector = sector;
-        this.pago = pago;
-    }
+//    public Cliente(String names, int sector, Pago pago) {
+//        this.names = names;
+//        this.sector = sector;
+//        this.pago = pago;
+//    }
 
+    public Cliente(String names, int sector) {
+        this.names = names;
+        this.sector = sector;
+        //this.pago = pago;
+    }
+    
     /**
      *
-     * @return nombres
+     * @return names
      */
     public String getNombres() {
-        return nombres;
+        return names;
     }
-
-    /**
-     *
-     * @return
-     */
+ 
     public String getSector() {
         switch (this.sector) {
             case 1:
@@ -58,13 +57,9 @@ public class Cliente {
         }
         return null;
     }
-
-    /**
-     *
-     * @return
-     */
-    public String getInformacionCliente() {
-        return "Usted ingreso la siguiente informacion" + "\nNombre:" + nombres + "\nSector=" + sector;
+    
+    public String getinfo_cliente() {
+        return "Usted ingreso la siguiente informacion" + "\nNombres:" + names + "\nSector=" + sector;
     }
 
     @Override

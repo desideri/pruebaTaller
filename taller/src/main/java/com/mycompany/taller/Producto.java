@@ -11,99 +11,53 @@ package com.mycompany.taller;
  */
 public class Producto {
 
-    String nombre; // El nombre del producto.
-    String descripcion; // La descripcion del producto.
-    int stock; // El stock del producto.
-    int limite; //El limite de ese producto por pedido
+    String nombre;
+    String info; 
+    int cant; 
+    int limite; 
     double precio;
+    Boolean estado; 
 
-    /**
-     *
-     */
-    public Producto() {
-    }
+    public Producto() {}
 
-    /**
-     *
-     * @param nombre
-     * @param descripcion
-     * @param stock
-     * @param limite
-     * @param precio
-     */
-    public Producto(String nombre, String descripcion, int stock, int limite, double precio) {
+    public Producto(String nombre, String info, int cant, int limite, double precio, boolean estado) {
         this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.stock = stock;
+        this.info = info;
+        this.cant = cant;
         this.limite = limite;
         this.precio = precio;
+        this.estado = true;
     }
 
-    //Funcion que valida si el producto est� fuera de stock de ser asi retorna 0, si esta dentro de stock retorna 1.
+    public int getCant() {
+        return cant;
+    }
 
-    /**
-     *
-     * @return
-     */
-    public int validar_stock() {
-        if (this.getStock() == 0 || this.getStock() < 0 || this.getStock() > 100) {
+    public String getNombre() {
+        return nombre;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+ 
+    public int validar_cant() {
+        if (this.getCant() == 0 || this.getCant() < 0 || this.getCant() > 100) {
             return 0;
         }
         return 1;
     }
 
-//    public int validar_stock(){
-//        if (this.getStock() == 0 || this.getStock()< 0 || this.getStock() > 100)
-//            return 0;
-//        return 1;
-//    }
-    //Funcion que retorna el n�mero de stock del producto.
-
-    /**
-     *
-     * @return
-     */
-    public int getStock() {
-        return stock;
-    }
-
-    //Funcion que retorna el nombre del producto
-
-    /**
-     *
-     * @return
-     */
-    public String getNombre() {
-        return nombre;
-    }
-
-    //Funcion que retorna el precio del producto
-
-    /**
-     *
-     * @return
-     */
-    public double getPrecio() {
-        return precio;
-    }
-
-    //Funcion que retorna un String indicando si el producto se creo correctamente.
-
-    /**
-     *
-     * @return
-     */
     public String crear_producto() {
-        if (this.validar_stock() == 1) {
+        if (this.validar_cant() == 1) {
             System.out.println("Usted ha creado:" + this.toString());
 
             return "Se creo el producto exitosamente!";
         }
-        return "No se pudo crear el producto.Verifique el stock ingresado.";
+        return "No se pudo crear el producto.Verifique el cant ingresado.";
     }
 
-    //Funcion que retorna un String, donde muestra el nombre del producto.
-    @Override //Esta permite visualizar el catalogo.
+    @Override
     public String toString() {
         return "Producto{" + "nombre=" + nombre + '}';
     }
